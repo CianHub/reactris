@@ -6,7 +6,6 @@ const Stage = ({ stage }) => {
   return (
     <StyledStage width={stage[0].length} height={stage.length}>
       {stage?.map((row) => {
-        console.log(row);
         return row.map((cell, x) => <Cell key={x} type={cell[0]}></Cell>);
       })}
     </StyledStage>
