@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react';
-import { blockGenerator } from '../blocks';
+import { BLOCK, blockGenerator } from '../blocks';
 import { STAGE_WIDTH } from '../helpers/helpers';
 
 export const usePlayer = () => {
   const [player, setPlayer] = useState({
     pos: { x: 0, y: 0 },
-    block: blockGenerator().shape,
+    block: BLOCK[0].shape,
     collided: false,
   });
 
