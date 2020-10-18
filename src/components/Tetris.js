@@ -4,6 +4,7 @@ import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
 import { createStage } from '../helpers/helpers';
+import { StyledTetris, StyledTetrisWrapper } from './styles/StyledTetris';
 
 const Tetris = () => {
   return (
