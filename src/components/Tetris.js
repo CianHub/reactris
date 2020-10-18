@@ -9,8 +9,8 @@ import { usePlayer } from '../hooks/usePlayer';
 import { useStage } from '../hooks/useStage';
 
 const Tetris = () => {
-  const [stage, setStage] = useStage();
   const [player, setPlayer] = usePlayer();
+  const [stage, setStage] = useStage(player);
   const [dropSpeed, setDropSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
@@ -20,11 +20,15 @@ const Tetris = () => {
       <StyledTetris>
         <Stage stage={stage}></Stage>
         <aside>
-          <div>
-            <Display text="Score"></Display>
-            <Display text="Rows"></Display>
-            <Display text="Level"></Display>
-          </div>
+          {gameOver ? (
+            <Display gameOver={gameOver}></Display>
+          ) : (
+            <div>
+              <Display text="Score"></Display>
+              <Display text="Rows"></Display>
+              <Display text="Level"></Display>
+            </div>
+          )}
           <StartButton></StartButton>
         </aside>
       </StyledTetris>
