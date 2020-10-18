@@ -10,7 +10,7 @@ import { useStage } from '../hooks/useStage';
 import { createStage } from '../helpers/helpers';
 
 const Tetris = () => {
-  const [player, setPlayer] = usePlayer();
+  const [player, updatePlayerPosition, resetPlayer] = usePlayer();
   const [stage, setStage] = useStage(player);
   const [dropSpeed, setDropSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
@@ -18,7 +18,7 @@ const Tetris = () => {
   console.log('re-render');
 
   const movePlayer = (direction) => {
-    // Player horizontal movmement
+    // Player horizontal movement
     updatePlayerPosition({ x: direction, y: 0 });
   };
 
