@@ -1,6 +1,12 @@
 import React from 'react';
 import Cell from './Cell';
 
-export const Stage = ({ stage }) => {
-  return <div></div>;
+const Stage = ({ stage }) => {
+  return (
+    <div>
+      <Cell></Cell>
+    </div>
+  );
 };
+
+export default Stage;
