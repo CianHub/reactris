@@ -20,14 +20,13 @@ export const usePlayer = () => {
     }));
   };
 
-  const resetPlayer = () =>
-    useCallback(() => {
-      setPlayer({
-        pos: { x: STAGE_WIDTH / 2 - 2, y: 0 },
-        block: blockGenerator().shape,
-        collided: false,
-      });
-    }, []);
+  const resetPlayer = useCallback(() => {
+    setPlayer({
+      pos: { x: STAGE_WIDTH / 2 - 2, y: 0 },
+      block: blockGenerator().shape,
+      collided: false,
+    });
+  }, []);
 
   return [player, updatePlayerPosition, resetPlayer];
 };
